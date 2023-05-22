@@ -35,7 +35,7 @@ const AuthorPage: NextPage<{ params: { author: string } }> = ({ params }) => {
         />
         <div>
           <h1 className="pb-4 text-3xl font-bold">{author}</h1>
-          <h1>{`Hello that is my bio!`}</h1>
+          <h1>{profile.bio}</h1>
         </div>
       </div>
       <Mdx code={profile.body.code} />
