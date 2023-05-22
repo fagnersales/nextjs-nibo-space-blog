@@ -31,15 +31,15 @@ const AuthorPage: NextPage<{ params: { author: string } }> = ({ params }) => {
           alt={`${profile.name}'s profile image`}
           width={96}
           height={96}
-          className="h-24 w-24 rounded-full bg-black"
+          className="h-24 w-24 rounded-full bg-neutral-900"
         />
         <div>
-          <h1 className="pb-4 text-3xl font-bold">{author}</h1>
-          <h1>{profile.bio}</h1>
+          <h1 className="pb-4 text-3xl font-bold text-neutral-300">{author}</h1>
+          <h1 className="text-neutral-400">{profile.bio}</h1>
         </div>
       </div>
       <Mdx code={profile.body.code} />
-      <h1 className="border-b-2 border-b-gray-700 pb-4 text-3xl font-bold">
+      <h1 className="border-b-2 text-neutral-300 border-b-neutral-700 pb-4 text-3xl font-bold">
         Posts
       </h1>
       <Cards posts={posts} />

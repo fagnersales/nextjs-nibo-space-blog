@@ -22,7 +22,7 @@ export default function RootLayout({
         <link rel="icon" href="/icon.svg" sizes="any" />
       </Head>
       <body
-        className={`min-h-screen bg-gradient-to-b from-gray-800 from-10% to-gray-900 to-90% text-gray-100 ${inter.className}`}
+        className={`min-h-screen bg-gradient-radial ${inter.className}`}
       >
         <Nav />
         {children}

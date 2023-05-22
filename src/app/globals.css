@@ -7,17 +7,13 @@
 }
 
 ::-webkit-scrollbar-track {
-  background: hsl(217, 20%, 30%);
+  background: #0a0a0a;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: hsl(222, 34%, 45%);
+  background: #282828;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: hsl(221, 34%, 52%);
-}
-
-body {
-  @apply bg-gradient-to-b from-gray-800 from-10% to-gray-900 to-90% text-gray-100 min-h-screen;
+  background: #444444;
 }

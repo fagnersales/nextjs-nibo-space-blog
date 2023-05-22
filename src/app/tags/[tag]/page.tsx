@@ -14,7 +14,7 @@ const TagPage: NextPage<{ params: { tag: string } }> = ({ params }) => {
 
   return (
     <section className="m-8 grid gap-4 lg:m-auto lg:my-8 lg:max-w-3xl">
-      <h1 className="border-b-2 border-b-gray-700 pb-4 text-3xl font-bold text-gray-200">
+      <h1 className="border-b-2 border-b-neutral-700 pb-4 text-3xl font-bold text-neutral-400">
         {`#${params.tag.toUpperCase()}`}
       </h1>
       <Cards posts={posts} />

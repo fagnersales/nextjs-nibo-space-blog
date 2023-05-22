@@ -13,7 +13,7 @@ export function SearchBar() {
           <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
             <svg
               aria-hidden="true"
-              className="h-5 w-5 text-gray-100"
+              className="h-5 w-5 text-neutral-200"
               fill="currentColor"
               viewBox="0 0 20 20"
               xmlns="http://www.w3.org/2000/svg"
@@ -28,7 +28,7 @@ export function SearchBar() {
           <input
             type="text"
             id="simple-search"
-            className="block w-full border-2 border-gray-500 bg-gray-700 p-2.5 pl-10 text-sm text-gray-100 focus:outline-none"
+            className="block w-full border-2 border-neutral-600 bg-neutral-800 p-2.5 pl-10 text-sm text-neutral-100 focus:border-neutral-500 focus:bg-neutral-700 focus:outline-none"
             placeholder="Pesquisar"
             autoComplete="off"
             required

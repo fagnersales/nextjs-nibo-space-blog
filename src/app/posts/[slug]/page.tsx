@@ -16,7 +16,7 @@ function Author(props: { name: string; date: string }) {
   if (!profile) throw new Error("profile not found");
 
   return (
-    <div className="my-4 flex place-items-center justify-between bg-gray-700 p-4 md:my-8">
+    <div className="my-4 flex place-items-center justify-between bg-neutral-700 p-4 md:my-8">
       <div className="flex place-items-center gap-2">
         <Image
           src={profile.imageUrl}
@@ -25,7 +25,7 @@ function Author(props: { name: string; date: string }) {
           height={32}
           className="h-8 w-8 rounded-full bg-slate-600"
         />
-        <h2 className="text-sm font-bold text-gray-100 hover:cursor-pointer md:text-lg">
+        <h2 className="text-sm font-bold text-neutral-300 hover:cursor-pointer md:text-lg">
           <Link href={authorSlugUrl(props.name)}>{props.name}</Link>
         </h2>
       </div>
@@ -42,7 +42,7 @@ const PostPage: NextPage<{ params: { slug: string } }> = ({ params }) => {
   if (!post) return <div>Post not found</div>;
 
   return (
-    <section className="m-8 grid md:gap-2 lg:m-auto lg:my-8 lg:max-w-3xl">
+    <section className="m-8 grid md:gap-2 lg:m-auto lg:my-8 lg:max-w-3xl text-neutral-300">
       <h1 className="text-3xl font-extrabold">{post.title}</h1>
       <div className="mb-2 flex gap-2">
         {post.tags.map((tag, index) => (
