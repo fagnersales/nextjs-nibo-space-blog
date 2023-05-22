@@ -5,6 +5,7 @@ import { formatDate } from "~/app/utils/formatDate";
 import { authorSlugUrl, tagSlugUrl } from "~/app/utils/slugs";
 import { Mdx } from "~/components/mdx";
 import { NextPage } from "next";
+import { InitialPageButton } from "~/components/initial-page";
 
 export const generateStaticParams = () =>
   allPosts.map((post) => ({ slug: post.slug }));
@@ -54,6 +55,7 @@ const PostPage: NextPage<{ params: { slug: string } }> = ({ params }) => {
       </div>
       <Author date={post.date} name={post.author} />
       <Mdx code={post.body.code} />
+      <InitialPageButton />
     </section>
   );
 };

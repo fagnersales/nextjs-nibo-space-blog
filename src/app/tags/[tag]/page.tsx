@@ -2,6 +2,7 @@ import { allPosts } from "contentlayer/generated";
 import { NextPage } from "next";
 import { tagSlug } from "~/app/utils/slugs";
 import { Cards } from "~/components/cards";
+import { InitialPageButton } from "~/components/initial-page";
 
 export const generateStaticParams = () =>
   allPosts.map((post) => post.tags.map((tag) => ({ tag: tagSlug(tag) }))).flat();
@@ -17,7 +18,7 @@ const TagPage: NextPage<{ params: { tag: string } }> = ({ params }) => {
         {`#${params.tag.toUpperCase()}`}
       </h1>
       <Cards posts={posts} />
-      {/* <InitialPageButton text="Página Inicial" /> */}
+      <InitialPageButton />
     </section>
   );
 };

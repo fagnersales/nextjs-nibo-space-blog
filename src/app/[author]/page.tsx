@@ -1,6 +1,7 @@
 import { Post, Profile, allPosts, allProfiles } from "contentlayer/generated";
 import { authorSlug } from "../utils/slugs";
 import { Cards } from "~/components/cards";
+import { InitialPageButton } from "~/components/initial-page";
 import Image from "next/image";
 import { Mdx } from "~/components/mdx";
 import { NextPage } from "next";
@@ -42,6 +43,7 @@ const AuthorPage: NextPage<{ params: { author: string } }> = ({ params }) => {
         Posts
       </h1>
       <Cards posts={posts} />
+      <InitialPageButton />
     </section>
   );
 };
