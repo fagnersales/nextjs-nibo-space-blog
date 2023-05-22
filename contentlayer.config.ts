@@ -5,18 +5,29 @@ export const Post = defineDocumentType(() => ({
   filePathPattern: "**/*.mdx",
   contentType: "mdx",
   fields: {
+    slug: { type: "string", required: true },
     title: { type: "string", required: true },
     date: { type: "date", required: true },
-  },
-  computedFields: {
-    url: {
-      type: "string",
-      resolve: (post) => `/posts/${post._raw.flattenedPath}`,
-    },
-  },
+    author: { type: "enum", options: ["Fagner Sales"], required: true },
+    tags: { type: "list", of: { type: "string" }, required: true },
+    draft: { type: "boolean", required: false, default: true },
+  }
 }));
 
+export const Profile = defineDocumentType(() => ({
+  name: "Profile",
+  filePathPattern: "**/*.mdx",
+  contentType: "mdx",
+  fields: {
+    name: { type: "string", required: true },
+    bio: { type: "string", required: true },
+    imageUrl: { type: "string", required: true },
+    writter: { type: "boolean", required: true }
+  }
+}))
+
 export default makeSource({
-  contentDirPath: "src/posts",
-  documentTypes: [Post],
+  contentDirPath: "src/content",
+  documentTypes: [Post, Profile],
+  disableImportAliasWarning: true
 });
