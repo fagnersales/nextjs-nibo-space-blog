@@ -39,7 +39,7 @@ const AuthorPage: NextPage<{ params: { author: string } }> = ({ params }) => {
         </div>
       </div>
       <Mdx code={profile.body.code} />
-      <h1 className="border-b-2 text-neutral-300 border-b-neutral-700 pb-4 text-3xl font-bold">
+      <h1 className="border-b-2 border-b-neutral-700 pb-4 text-3xl font-bold text-neutral-300">
         Posts
       </h1>
       <Cards posts={posts} />
