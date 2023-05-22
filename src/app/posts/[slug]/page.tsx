@@ -10,7 +10,7 @@ import { InitialPageButton } from "~/components/initial-page";
 export const generateStaticParams = () =>
   allPosts.map((post) => ({ slug: post.slug }));
 
-export async function generateMetaData(props: { params: { slug: string } }): Promise<Metadata> {
+export async function generateMetadata(props: { params: { slug: string } }): Promise<Metadata> {
   const slug = props.params.slug;
 
   const post = allPosts.find(post => post.slug === slug);
