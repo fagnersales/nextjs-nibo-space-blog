@@ -11,8 +11,8 @@ export function Nav() {
       <Link href="/">
         <div className="flex flex-row place-items-center gap-2">
           <Image
-            src="logo_no_fill.svg"
-            alt="Vercel's logo"
+            src="/logo_no_fill.svg"
+            alt="Nibo Space's logo"
             width={50}
             height={50}
           />
