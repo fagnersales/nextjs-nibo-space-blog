@@ -7,7 +7,11 @@ type CardProps = { post: Post; index: number };
 
 function Card({ post, index }: CardProps) {
   return (
-    <div className="grid border-b-2 border-b-slate-800 pb-2 text-sm text-gray-200">
+    <div
+      className="grid border-b-2 border-b-slate-800 pb-2 text-sm text-gray-200"
+      data-title={post.title}
+      data-tags={post.tags.join(",")}
+    >
       <h1 className="text-lg font-black hover:underline">
         <Link href={postSlugUrl(post)}>{`${index + 1}. ${post.title}`}</Link>
       </h1>
