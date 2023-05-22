@@ -9,7 +9,12 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Nibo Space",
-  description: "Um lugar incrível"
+  description: "Um lugar incrível",
+  twitter: {
+    card: "summary_large_image",
+    site: "https://nibo-space.vercel.app",
+  },
+  themeColor: "black",
 };
 
 export default function RootLayout({
@@ -18,13 +23,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="pt-br">
       <Head>
         <link rel="icon" href="/icon.svg" sizes="any" />
       </Head>
-      <body
-        className={`min-h-screen bg-gradient-radial ${inter.className}`}
-      >
+      <body className={`min-h-screen bg-gradient-radial ${inter.className}`}>
         <Nav />
         {children}
         <Analytics />

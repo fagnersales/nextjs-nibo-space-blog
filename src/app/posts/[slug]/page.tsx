@@ -4,11 +4,23 @@ import Image from "next/image";
 import { formatDate } from "~/app/utils/formatDate";
 import { authorSlugUrl, tagSlugUrl } from "~/app/utils/slugs";
 import { Mdx } from "~/components/mdx";
-import { NextPage } from "next";
+import { NextPage, Metadata } from "next";
 import { InitialPageButton } from "~/components/initial-page";
 
 export const generateStaticParams = () =>
   allPosts.map((post) => ({ slug: post.slug }));
+
+export async function generateMetaData(props: { params: { slug: string } }): Promise<Metadata> {
+  const slug = props.params.slug;
+
+  const post = allPosts.find(post => post.slug === slug);
+
+  if (!post) return {}
+
+  return {
+    title: post.title,
+  }
+}
 
 function Author(props: { name: string; date: string }) {
   const profile = allProfiles.find((profile) => profile.name === props.name);
