@@ -3,11 +3,12 @@ import { authorSlug } from "../utils/slugs";
 import { Cards } from "~/components/cards";
 import Image from "next/image";
 import { Mdx } from "~/components/mdx";
+import { NextPage } from "next";
 
 export const generateStaticParams = () =>
   allPosts.map((post) => ({ author: authorSlug(post.author) }));
 
-function AuthorPage({ params }: { params: { author: string } }) {
+const AuthorPage: NextPage<{ params: { author: string } }> = ({ params }) => {
   const postPredicate = (post: Post) =>
     authorSlug(post.author) === params.author;
 
@@ -43,6 +44,6 @@ function AuthorPage({ params }: { params: { author: string } }) {
       <Cards posts={posts} />
     </section>
   );
-}
+};
 
 export default AuthorPage;

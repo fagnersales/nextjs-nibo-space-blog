@@ -4,6 +4,7 @@ import Image from "next/image";
 import { formatDate } from "~/app/utils/formatDate";
 import { authorSlugUrl, tagSlugUrl } from "~/app/utils/slugs";
 import { Mdx } from "~/components/mdx";
+import { NextPage } from "next";
 
 export const generateStaticParams = () =>
   allPosts.map((post) => ({ slug: post.slug }));
@@ -34,7 +35,7 @@ function Author(props: { name: string; date: string }) {
   );
 }
 
-export const PostPage = ({ params }: { params: { slug: string } }) => {
+const PostPage: NextPage<{ params: { slug: string } }> = ({ params }) => {
   const post = allPosts.find((post) => post.slug === params.slug);
 
   if (!post) return <div>Post not found</div>;
