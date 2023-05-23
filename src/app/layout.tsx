@@ -4,6 +4,7 @@ import "./globals.css";
 import { Inter } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
 import Head from "next/head";
+import { ClerkProvider } from "@clerk/nextjs";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -23,15 +24,17 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="pt-br">
-      <Head>
-        <link rel="icon" href="/icon.svg" sizes="any" />
-      </Head>
-      <body className={`min-h-screen bg-gradient-radial ${inter.className}`}>
-        <Nav />
-        {children}
-        <Analytics />
-      </body>
-    </html>
+    <ClerkProvider>
+      <html lang="pt-br">
+        <Head>
+          <link rel="icon" href="/icon.svg" sizes="any" />
+        </Head>
+        <body className={`min-h-screen bg-gradient-radial ${inter.className}`}>
+          <Nav />
+          {children}
+          <Analytics />
+        </body>
+      </html>
+    </ClerkProvider>
   );
-}
+};

@@ -3,24 +3,28 @@
 import Script from "next/script";
 import Link from "next/link";
 import Image from "next/image";
+import { LoginButton } from "./login";
 
 export function Nav() {
   return (
     <>
-      <header className="primary-header sticky top-0 grid grid-flow-col place-items-center bg-neutral-900 p-8 opacity-50 transition-opacity duration-500 hover:opacity-100">
-      <Link href="/">
-        <div className="flex flex-row place-items-center gap-2">
-          <Image
-            src="/logo_no_fill.svg"
-            alt="Nibo Space's logo"
-            width={50}
-            height={50}
-          />
-          <span className="hover:animate-pulse-slow text-2xl font-black uppercase text-[#828282]">
-            Nibo Space
-          </span>
+      <header className="primary-header sticky top-0 grid place-items-center bg-neutral-900 p-8 opacity-50 transition-opacity duration-500 hover:opacity-100">
+        <div className="grid w-full max-w-3xl grid-flow-col items-center justify-between">
+          <Link href="/">
+            <div className="flex flex-row place-items-center gap-2">
+              <Image
+                src="/logo_no_fill.svg"
+                alt="Nibo Space's logo"
+                width={50}
+                height={50}
+              />
+              <span className="hover:animate-pulse-slow text-2xl font-black uppercase text-[#828282]">
+                Nibo Space
+              </span>
+            </div>
+          </Link>
+          <LoginButton />
         </div>
-        </Link>
       </header>
 
       <style jsx>{`

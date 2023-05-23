@@ -4,23 +4,11 @@ import Image from "next/image";
 import { formatDate } from "~/app/utils/formatDate";
 import { authorSlugUrl, tagSlugUrl } from "~/app/utils/slugs";
 import { Mdx } from "~/components/mdx";
-import { NextPage, Metadata } from "next";
+import { NextPage } from "next";
 import { InitialPageButton } from "~/components/initial-page";
 
 export const generateStaticParams = () =>
   allPosts.map((post) => ({ slug: post.slug }));
-
-export async function generateMetadata(props: { params: { slug: string } }): Promise<Metadata> {
-  const slug = props.params.slug;
-
-  const post = allPosts.find(post => post.slug === slug);
-
-  if (!post) return {}
-
-  return {
-    title: post.title,
-  }
-}
 
 function Author(props: { name: string; date: string }) {
   const profile = allProfiles.find((profile) => profile.name === props.name);
@@ -54,7 +42,7 @@ const PostPage: NextPage<{ params: { slug: string } }> = ({ params }) => {
   if (!post) return <div>Post not found</div>;
 
   return (
-    <section className="m-8 grid md:gap-2 lg:m-auto lg:my-8 lg:max-w-3xl text-neutral-300">
+    <section className="m-8 grid text-neutral-300 md:gap-2 lg:m-auto lg:my-8 lg:max-w-3xl">
       <h1 className="text-3xl font-extrabold">{post.title}</h1>
       <div className="mb-2 flex gap-2">
         {post.tags.map((tag, index) => (
