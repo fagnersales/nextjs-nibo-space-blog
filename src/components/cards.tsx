@@ -37,7 +37,12 @@ function Card({ post, index }: CardProps) {
 
 type CardsProps = { posts: Post[] };
 
-export function Cards({ posts }: CardsProps) {
+export function Cards(props: CardsProps) {
+  const posts = props.posts.sort(
+    (postA, postB) =>
+      new Date(postB.date).getTime() - new Date(postA.date).getTime()
+  );
+
   return (
     <>
       {posts.length === 0 ? (
